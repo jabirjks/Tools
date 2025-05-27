@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background: #f9f9f9;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  height: 100vh;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.hide {
+  transform: translateX(-100%);
+}
+
+.sidebar .profile {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar .profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+  background-color: #e0f0ff;
+}
+
+.main-content {
+  margin-left: 250px;
+  width: 100%;
+  padding: 1rem;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#toggleBtn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add-btn {
+  background-color: #0052cc;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+.sidebar.hide ~ .main-content {
+  margin-left: 0;
+}
